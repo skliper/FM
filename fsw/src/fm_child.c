@@ -1229,6 +1229,8 @@ void FM_ChildDirListPktCmd(const FM_ChildQueueEntry_t *CmdArgs)
         FM_AppData.HkTlm.Payload.ChildCmdCounter++;
     }
 
+printf("FM total files = %d, offset = %ld\n", ReportPtr->TotalFiles, offsetof(FM_DirListPkt_t, Payload.TotalFiles));
+
     /* Report previous child task activity */
     FM_AppData.HkTlm.Payload.ChildPreviousCC = CmdArgs->CommandCode;
     FM_AppData.HkTlm.Payload.ChildCurrentCC  = 0;
